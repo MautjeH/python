@@ -18,10 +18,12 @@ while p == 'ja':
 
     y = 'wrong'
     while y == 'wrong':
-        inzet = int(input('wat zet u in '))
-        if inzet < 10:
-            print('invalid bet')
-        elif inzet > sk:
+        inzet = input('wat zet u in ')
+        while not inzet.isnumeric():
+            print("invalid bet")
+            inzet = input("wat zet u in ")
+        inzet = int(inzet)
+        if inzet < 10 or inzet > sk:
             print('invalid bet')
         elif inzet >= 10:
             y = 'ok'
